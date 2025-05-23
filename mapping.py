@@ -4,15 +4,6 @@ import nibabel as nib
 from scipy.stats import zscore
 
 
-def nan_corr(x, y):
-    '''Calculate Pearson's correlation coefficient between two vectors with NaNs.'''
-
-    valid_mask = ~np.isnan(x) & ~np.isnan(y)
-    r = np.corrcoef(x[valid_mask], y[valid_mask])[0, 1]
-
-    return r
-
-
 def create_func_gii(data, hemi, map_names):
     '''Convert data-arrays to func GIFTI.'''
 
@@ -63,6 +54,15 @@ def create_label_gii(data, hemi, map_name):
     gifti = nib.GiftiImage(darrays=[darray], labeltable=labeltable, meta=meta)
 
     return gifti
+
+
+def nan_corr(x, y):
+    '''Calculate Pearson's correlation coefficient between two vectors with NaNs.'''
+
+    valid_mask = ~np.isnan(x) & ~np.isnan(y)
+    r = np.corrcoef(x[valid_mask], y[valid_mask])[0, 1]
+
+    return r
 
 
 def run(args):
