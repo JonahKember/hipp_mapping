@@ -1,6 +1,0 @@
-setup.py
-hipp_mapping.egg-info/PKG-INFO
-hipp_mapping.egg-info/SOURCES.txt
-hipp_mapping.egg-info/dependency_links.txt
-hipp_mapping.egg-info/entry_points.txt
-hipp_mapping.egg-info/top_level.txt

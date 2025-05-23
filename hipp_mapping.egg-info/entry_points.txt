@@ -1,3 +1,0 @@
-[console_scripts]
-hipp_mapping = main:main
-
